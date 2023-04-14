@@ -143,7 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gameManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="rocket.cpp" />
+    <ClCompile Include="sceneManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="gameManager.h" />
+    <ClInclude Include="rocket.h" />
+    <ClInclude Include="sceneManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,7 +1,7 @@
 #include <assert.h>
 
 #include "SFML/Graphics.hpp"
-
+#include "sceneManager.h"
 
 using namespace sf;
 
@@ -16,7 +16,6 @@ struct Dim2Df
 {
 	float x, y;
 };
-
 
 /*
 A box to put Games Constants in.
@@ -37,14 +36,18 @@ namespace GC
 int main()
 {
 	// Create the main window
-	RenderWindow window(VideoMode(GC::SCREEN_RES.x, GC::SCREEN_RES.y), "My first code");
+	RenderWindow window(VideoMode(GC::SCREEN_RES.x, GC::SCREEN_RES.y), "Asteroid Hero");
 
+	SceneManager sceneManager;
+	sceneManager.initialise(window);
 
 	// Start the game loop 
 	while (window.isOpen())
 	{
 		// Process events
 		Event event;
+		Clock clock;
+
 		while (window.pollEvent(event))
 		{
 			// Close window: exit
@@ -57,9 +60,16 @@ int main()
 			}
 		}
 
+		float timeElapsed = clock.getElapsedTime().asSeconds();
+
+		sceneManager.update(window, timeElapsed);
+
+		clock.restart();
+
 		// Clear screen
 		window.clear();
 
+		sceneManager.render(window);
 
 		// Update the window
 		window.display();
