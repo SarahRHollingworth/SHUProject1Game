@@ -1,5 +1,6 @@
 #pragma once
 #include "rocket.h"
+#include "asteroid.h"
 
 struct GameManager {
 
@@ -7,6 +8,8 @@ struct GameManager {
 private:
   Rocket rocket;
   Texture rocket_tx;
+  static const int maxAsteroids = 30;
+  Asteroid asteroid_Arr[maxAsteroids];
   int currentScore;
   const float maxAsteroidSpawnTimer = 0.05f;
   float asteroidSpawnTimer;

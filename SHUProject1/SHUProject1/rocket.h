@@ -2,6 +2,8 @@
 #include <assert.h>
 #include "SFML/Graphics.hpp"
 
+#include "laser.h"
+
 using namespace sf;
 
 struct Rocket {
