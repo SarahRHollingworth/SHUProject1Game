@@ -11,13 +11,15 @@ struct Rocket {
   // Attributes
 private:
   Sprite spr;
+  const int animationFrames = 3;
+  int textureWidth;
   Vector2f pos{ 0.0f, 0.0f };
   float velocity;
   const float maxShootCooldown = 0.05f;
   float shootCooldown;
   bool canFire;
   int health;
-  const float maxRocketAnimationTimer = 0.002f;
+  const float maxRocketAnimationTimer = 0.1f;
   float rocketAnimationTimer = maxRocketAnimationTimer;
 
   // Functions
@@ -27,8 +29,8 @@ public:
   void render(RenderWindow&);
 
   void takeDamage(int amount);
-  int getHealth();
   void reset();
+  int getHealth();
 
 private:
   void move(float timeElapsed);

@@ -1,2 +1,14 @@
-﻿  main.cpp
+﻿  asteroid.cpp
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\asteroid.cpp(13,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\asteroid.cpp(47,23): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  gameManager.cpp
+  highscore.cpp
+  main.cpp
+  sceneManager.cpp
+  uiManager.cpp
+  Generating Code...
   SHUProject1.vcxproj -> C:\Users\SRHol\SHUProject1Game\SHUProject1\Debug\SHUProject1.exe

@@ -1,6 +1,7 @@
 #pragma once
 #include "rocket.h"
 #include "asteroid.h"
+#include "randomNumberGenerator.h"
 
 struct GameManager {
 
@@ -8,11 +9,17 @@ struct GameManager {
 private:
   Rocket rocket;
   Texture rocket_tx;
+  RandomNumberGenerator rng;
+
+  Texture asteroid_tx[4];
   static const int maxAsteroids = 30;
+  int numberOfAsteroids;
   Asteroid asteroid_Arr[maxAsteroids];
-  int currentScore;
-  const float maxAsteroidSpawnTimer = 0.05f;
+  int asteroidSpawnCounter;
+  const float maxAsteroidSpawnTimer = 1.0f;
   float asteroidSpawnTimer;
+
+  int currentScore;
   bool gameActive;
 
   // Functions
@@ -21,9 +28,14 @@ public:
   void update(RenderWindow&, float timeElapsed);
   void render(RenderWindow&);
 
+  void reset();
+
   bool getGameActive();
   int getCurrentScore();
 
 private:
   void updateScore(int amount);
+  bool CheckAsteroidSpawnTimer(float timeElapsed);
+  void SpawnAsteroid(RenderWindow&);
+  int FindNextInactiveAsteroid();
 };

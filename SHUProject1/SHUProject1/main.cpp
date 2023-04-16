@@ -41,12 +41,15 @@ int main()
 	SceneManager sceneManager;
 	sceneManager.initialise(window);
 
+	Clock clock;
+
 	// Start the game loop 
 	while (window.isOpen())
 	{
+		float timeElapsed = clock.restart().asSeconds();
+
 		// Process events
 		Event event;
-		Clock clock;
 
 		while (window.pollEvent(event))
 		{
@@ -60,11 +63,8 @@ int main()
 			}
 		}
 
-		float timeElapsed = clock.getElapsedTime().asSeconds();
-
 		sceneManager.update(window, timeElapsed);
 
-		clock.restart();
 
 		// Clear screen
 		window.clear();

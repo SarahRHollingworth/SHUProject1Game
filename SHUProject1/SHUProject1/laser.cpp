@@ -17,9 +17,9 @@ void Laser::move(float timeElapsed) {
 }
 
 bool Laser::checkCollisionWithAsteroid(FloatRect* asteroidRect_Arr, Vector2f* asteroidPos_Arr, int& arrayIndex) {
-
+  return false;
 }
 
 bool Laser::checkForOutOfBounds() {
-
+  return false;
 }

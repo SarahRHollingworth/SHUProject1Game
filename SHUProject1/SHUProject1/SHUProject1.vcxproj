@@ -143,15 +143,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="asteroid.cpp" />
     <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="highscore.cpp" />
+    <ClCompile Include="laser.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="randomNumberGenerator.cpp" />
     <ClCompile Include="rocket.cpp" />
     <ClCompile Include="sceneManager.cpp" />
+    <ClCompile Include="soundManager.cpp" />
+    <ClCompile Include="uiManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="asteroid.h" />
     <ClInclude Include="gameManager.h" />
+    <ClInclude Include="highscore.h" />
+    <ClInclude Include="laser.h" />
+    <ClInclude Include="randomNumberGenerator.h" />
     <ClInclude Include="rocket.h" />
     <ClInclude Include="sceneManager.h" />
+    <ClInclude Include="soundManager.h" />
+    <ClInclude Include="uiManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
