@@ -13,9 +13,13 @@ private:
   Sprite spr;
   const int animationFrames = 3;
   int textureWidth;
+
+  Texture laser_tx;
+  std::vector<Laser> lasers;
+
   Vector2f pos{ 0.0f, 0.0f };
-  float velocity;
-  const float maxShootCooldown = 0.05f;
+  float velocity = 200.0f;
+  const float maxShootCooldown = 0.25f;
   float shootCooldown;
   bool canFire;
   int health;
@@ -25,16 +29,17 @@ private:
   // Functions
 public:
   void initialise(RenderWindow&, Texture&);
-  void update(RenderWindow&, float timeElapsed);
+  void update(RenderWindow&, float timeElapsed, bool* inputs);
   void render(RenderWindow&);
 
   void takeDamage(int amount);
-  void reset();
+  void reset(RenderWindow&);
   int getHealth();
 
 private:
-  void move(float timeElapsed);
-  void shootLaser();
+  void move(RenderWindow&, float timeElapsed, bool* inputs);
+  void shootLaser(RenderWindow&);
   void destroyRocketAnimation();
   void animateRocket(float timeElapsed);
+  void tickLaserCooldown(float timeElapsed);
 };

@@ -25,10 +25,10 @@ private:
   // Functions
 public:
   void initialise(RenderWindow&);
-  void update(RenderWindow&, float timeElapsed);
+  void update(RenderWindow&, float timeElapsed, bool* inputs);
   void render(RenderWindow&);
 
-  void reset();
+  void reset(RenderWindow&);
 
   bool getGameActive();
   int getCurrentScore();

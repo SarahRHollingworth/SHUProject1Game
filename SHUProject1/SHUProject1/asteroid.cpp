@@ -40,7 +40,7 @@ void Asteroid::spin(float timeElapsed) {
 }
 
 bool Asteroid::checkForOutOfBounds(RenderWindow& window) {
-  return spr.getPosition().y > window.getSize().y + spr.getLocalBounds().height / 2.0f;
+  return spr.getPosition().y > window.getSize().y + spr.getGlobalBounds().height / 2.0f;
 }
 
 int Asteroid::calcSpawnPosition(RenderWindow& window) {

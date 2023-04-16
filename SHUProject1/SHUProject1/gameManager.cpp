@@ -17,8 +17,8 @@ void GameManager::initialise(RenderWindow& window) {
   asteroidSpawnTimer = maxAsteroidSpawnTimer;
 }
 
-void GameManager::update(RenderWindow& window, float timeElapsed) {
-  rocket.update(window, timeElapsed);
+void GameManager::update(RenderWindow& window, float timeElapsed, bool* inputs_arr) {
+  rocket.update(window, timeElapsed, inputs_arr);
   
   for (int i = 0; i < maxAsteroids; ++i)
   {
@@ -54,7 +54,7 @@ void GameManager::updateScore(int amount) {
 
 }
 
-void GameManager::reset()
+void GameManager::reset(RenderWindow& window)
 {
   rng.seed(std::time(0));
   currentScore = 0;
@@ -65,7 +65,7 @@ void GameManager::reset()
   {
     asteroid_Arr[i].setActive(false);
   }
-  rocket.reset();
+  rocket.reset(window);
 }
 
 bool GameManager::CheckAsteroidSpawnTimer(float timeElapsed)

@@ -16,7 +16,7 @@ private:
 
 public:
   void initialise(RenderWindow&);
-  void update(RenderWindow&, float timeElapsed);
+  void update(RenderWindow&, float timeElapsed, bool* inputs);
   void render(RenderWindow&);
 
 private:

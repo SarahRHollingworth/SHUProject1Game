@@ -5,8 +5,8 @@ void SceneManager::initialise(RenderWindow& window) {
   gameManager.initialise(window);
 }
 
-void SceneManager::update(RenderWindow& window, float timeElapsed) {
-  gameManager.update(window, timeElapsed);
+void SceneManager::update(RenderWindow& window, float timeElapsed, bool* inputs_arr) {
+  gameManager.update(window, timeElapsed, inputs_arr);
 }
 
 void SceneManager::render(RenderWindow& window) {
