@@ -1,9 +1,18 @@
-﻿  rocket.cpp
-C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(23,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(40,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(89,23): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+﻿  gameManager.cpp
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\gameManager.cpp(159,23): warning C4018: '<': signed/unsigned mismatch
+  highscore.cpp
+  main.cpp
+  rocket.cpp
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(28,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SRHol\SHUProject1Game\SHUProject1\SHUProject1\rocket.cpp(179,23): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
           with
           [
               T=int
           ]
+  sceneManager.cpp
+  uiManager.cpp
+  Generating Code...
   SHUProject1.vcxproj -> C:\Users\SRHol\SHUProject1Game\SHUProject1\Debug\SHUProject1.exe

@@ -19,8 +19,8 @@ public:
   void render(RenderWindow&);
 
   bool checkForOutOfBounds();
+  bool checkCollisionWithAsteroid(std::vector<FloatRect>*, std::vector<Vector2f>*, int&);
 
 private:
   void move(float timeElapsed);
-  bool checkCollisionWithAsteroid(FloatRect*, Vector2f*, int&);
 };

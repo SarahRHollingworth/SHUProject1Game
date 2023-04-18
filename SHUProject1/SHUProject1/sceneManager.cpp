@@ -2,7 +2,7 @@
 
 void SceneManager::initialise(RenderWindow& window) {
   initialiseBackground(window);
-  gameManager.initialise(window);
+  gameManager.initialise(window, &utility);
 }
 
 void SceneManager::update(RenderWindow& window, float timeElapsed, bool* inputs_arr) {

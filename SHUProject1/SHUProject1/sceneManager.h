@@ -10,6 +10,7 @@ private:
   GameManager gameManager;
   UIManager uiManager;
   SoundManager soundManager;
+  Utility utility;
   Sprite background_spr;
   Texture background_tx;
   enum class State { MENU, GAME };

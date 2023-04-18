@@ -22,8 +22,36 @@ void Laser::move(float timeElapsed) {
 	spr.move(0.0f, -velocity * timeElapsed);
 }
 
-bool Laser::checkCollisionWithAsteroid(FloatRect* asteroidRect_Arr, Vector2f* asteroidPos_Arr, int& arrayIndex) {
-  return false;
+bool Laser::checkCollisionWithAsteroid(std::vector<FloatRect>* asteroidRect_vec, std::vector<Vector2f>* asteroidPos_vec, int& arrayIndex) {
+	bool found = false;
+
+	float laserHalfWidth = spr.getGlobalBounds().width / 2;
+	float laserHalfHeight = spr.getGlobalBounds().height / 2;
+
+	float laserLowerXBound = spr.getPosition().x - laserHalfWidth;
+	float laserUpperXBound = spr.getPosition().x + laserHalfWidth;
+	float laserLowerYBound = spr.getPosition().y - laserHalfHeight;
+	float laserUpperYBound = spr.getPosition().y + laserHalfHeight;
+	
+	for (int i = arrayIndex - 1; i > -1 && !found; --i)
+	{
+		float asteroidHalfWidth = asteroidRect_vec->at(i).width / 2;
+		float asteroidHalfHeight = asteroidRect_vec->at(i).height / 2;
+
+		float asteroidLowerXBound = asteroidPos_vec->at(i).x - asteroidHalfWidth;
+		float asteroidUpperXBound = asteroidPos_vec->at(i).x + asteroidHalfWidth;
+		float asteroidLowerYBound = asteroidPos_vec->at(i).y - asteroidHalfHeight;
+		float asteroidUpperYBound = asteroidPos_vec->at(i).y + asteroidHalfHeight;
+
+		if (laserLowerXBound < asteroidUpperXBound && laserUpperXBound > asteroidLowerXBound 
+			&& laserLowerYBound < asteroidUpperYBound && laserUpperYBound > asteroidUpperYBound)
+		{
+			found = true;
+			arrayIndex = i;
+		}
+	}
+
+	return found;
 }
 
 bool Laser::checkForOutOfBounds() {
